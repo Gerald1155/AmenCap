@@ -1,0 +1,376 @@
+$(document).ready(function(){
+    //update stable and non stable coins and prentage of the total 
+    $("#update_coins").on("click",function(e){
+        $("#messages").slideUp();
+        $("#process").slideDown();
+        e.preventDefault();
+        $.ajaxSetup({
+            headers:{
+                "X-CSRF-TOKEN":$("meta[name='csrf-token']").attr("content")
+            }
+        });
+        $.ajax({
+            url:"/admin/update/coins",
+            method:"POST",
+            success:function(data)
+            {
+                switch (data.status) {
+                    case 200:
+                    $("#success_message").val("");
+                    $("#success_message").text(data.message);
+                    $("#process").slideUp();
+                    $("#messages").slideDown();
+                    break;
+                    default:
+                        window.location.reload()
+                        break;
+                }
+            }
+            ,error:function(e)
+            {
+                console.log(e);
+            }
+        });
+    })
+    //year 
+    $("#update_profit_loss_year").on("click",function(e){
+        $("#messages").slideUp();
+        $("#process").slideDown();
+        e.preventDefault();
+        $.ajaxSetup({
+            headers:{
+                "X-CSRF-TOKEN":$("meta[name='csrf-token']").attr("content")
+            }
+        });
+        $.ajax({
+            url:"/admin/profit/update/year",
+            method:"POST",
+            success:function(data)
+            {
+                switch (data.status) {
+                    case 200:
+                    $("#success_message").val("");
+                    $("#success_message").text(data.message);
+                    $("#process").slideUp();
+                    $("#messages").slideDown();
+                    break;
+                    default:
+                        window.location.reload()
+                        break;
+                }
+            }
+            ,error:function(e)
+            {
+                console.log(e);
+            }
+        });
+    })
+    $("#update_chart_year").on("click",function(e){
+        $("#messages").slideUp();
+        $("#process").slideDown();
+        e.preventDefault();
+        $.ajaxSetup({
+            headers:{
+                "X-CSRF-TOKEN":$("meta[name='csrf-token']").attr("content")
+            }
+        });
+        $.ajax({
+            url:"/admin/profit/update/chart/year",
+            method:"POST",
+            success:function(data)
+            {
+                console.log(data.message);
+                switch (data.status) {
+                    case 200:
+                    $("#success_message").val("");
+                    $("#success_message").text(data.message);
+                      $("#process").slideUp();
+                    $("#messages").slideDown();
+                    break;
+                    default:
+                        window.location.reload()
+                        break;
+                }
+            }
+            ,error:function(e)
+            {
+                console.log(e);
+            }
+        });
+    })
+
+    //24 hour 
+    $("#update_profit_loss_day").on("click",function(e){
+        $("#messages").slideUp();
+        $("#process").slideDown();
+        e.preventDefault();
+        $.ajaxSetup({
+            headers:{
+                "X-CSRF-TOKEN":$("meta[name='csrf-token']").attr("content")
+            }
+        });
+        $.ajax({
+            url:"/admin/profit/update/24hour",
+            method:"POST",
+            success:function(data)
+            {
+                switch (data.status) {
+                    case 200:
+                    $("#success_message").val("");
+                    $("#success_message").text(data.message);
+                    $("#process").slideUp();
+                    $("#messages").slideDown();
+                    break;
+                    default:
+                        window.location.reload()
+                        break;
+                }
+            }
+            ,error:function(e)
+            {
+                console.log(e);
+            }
+        });
+    })
+    $("#update_chart_day").on("click",function(e){
+        $("#messages").slideUp();
+        $("#process").slideDown();
+        e.preventDefault();
+        $.ajaxSetup({
+            headers:{
+                "X-CSRF-TOKEN":$("meta[name='csrf-token']").attr("content")
+            }
+        });
+        $.ajax({
+            url:"/admin/profit/update/chart/24hour",
+            method:"POST",
+            success:function(data)
+            {
+                console.log(data.message);
+                switch (data.status) {
+                    case 200:
+                    $("#success_message").val("");
+                    $("#success_message").text(data.message);
+                      $("#process").slideUp();
+                    $("#messages").slideDown();
+                    break;
+                    default:
+                        window.location.reload()
+                        break;
+                }
+            }
+            ,error:function(e)
+            {
+                console.log(e);
+            }
+        });
+    })
+
+    //3 month
+    $("#update_profit_loss_3month").on("click",function(e){
+        $("#messages").slideUp();
+        $("#process").slideDown();
+        e.preventDefault();
+        $.ajaxSetup({
+            headers:{
+                "X-CSRF-TOKEN":$("meta[name='csrf-token']").attr("content")
+            }
+        });
+        $.ajax({
+            url:"/admin/profit/update/90days",
+            method:"POST",
+            success:function(data)
+            {
+                switch (data.status) {
+                    case 200:
+                    $("#success_message").val("");
+                    $("#success_message").text(data.message);
+                    $("#process").slideUp();
+                    $("#messages").slideDown();
+                    break;
+                    default:
+                        window.location.reload()
+                        break;
+                }
+            }
+            ,error:function(e)
+            {
+                console.log(e);
+            }
+        });
+    })
+    $("#update_chart_3month").on("click",function(e){
+        $("#messages").slideUp();
+        $("#process").slideDown();
+        e.preventDefault();
+        $.ajaxSetup({
+            headers:{
+                "X-CSRF-TOKEN":$("meta[name='csrf-token']").attr("content")
+            }
+        });
+        $.ajax({
+            url:"/admin/profit/update/chart/90days",
+            method:"POST",
+            success:function(data)
+            {
+                console.log(data.message);
+                switch (data.status) {
+                    case 200:
+                    $("#success_message").val("");
+                    $("#success_message").text(data.message);
+                      $("#process").slideUp();
+                    $("#messages").slideDown();
+                    break;
+                    default:
+                        window.location.reload()
+                        break;
+                }
+            }
+            ,error:function(e)
+            {
+                console.log(e);
+            }
+        });
+    })
+
+
+
+
+
+    //month 
+    $("#update_profit_loss_month").on("click",function(e){
+        $("#messages").slideUp();
+        $("#process").slideDown();
+        e.preventDefault();
+        $.ajaxSetup({
+            headers:{
+                "X-CSRF-TOKEN":$("meta[name='csrf-token']").attr("content")
+            }
+        });
+        $.ajax({
+            url:"/admin/profit/update/month",
+            method:"POST",
+            success:function(data)
+            {
+                switch (data.status) {
+                    case 200:
+                    $("#success_message").val("");
+                    $("#success_message").text(data.message);
+                    $("#process").slideUp();
+                    $("#messages").slideDown();
+                    break;
+                    default:
+                        window.location.reload()
+                        break;
+                }
+            }
+            ,error:function(e)
+            {
+                console.log(e);
+            }
+        });
+    })
+    $("#update_chart_month").on("click",function(e){
+        $("#messages").slideUp();
+        $("#process").slideDown();
+        e.preventDefault();
+        $.ajaxSetup({
+            headers:{
+                "X-CSRF-TOKEN":$("meta[name='csrf-token']").attr("content")
+            }
+        });
+        $.ajax({
+            url:"/admin/profit/update/chart/month",
+            method:"POST",
+            success:function(data)
+            {
+                console.log(data.message);
+                switch (data.status) {
+                    case 200:
+                    $("#success_message").val("");
+                    $("#success_message").text(data.message);
+                      $("#process").slideUp();
+                    $("#messages").slideDown();
+                    break;
+                    default:
+                        window.location.reload()
+                        break;
+                }
+            }
+            ,error:function(e)
+            {
+                console.log(e);
+            }
+        });
+    })
+
+
+
+
+    //week
+    $("#update_profit_loss_week").on("click",function(e){
+        $("#messages").slideUp();
+        $("#process").slideDown();
+        e.preventDefault();
+        $.ajaxSetup({
+            headers:{
+                "X-CSRF-TOKEN":$("meta[name='csrf-token']").attr("content")
+            }
+        });
+        $.ajax({
+            url:"/admin/profit/update/week",
+            method:"POST",
+            success:function(data)
+            {
+                switch (data.status) {
+                    case 200:
+                    $("#success_message").val("");
+                    $("#success_message").text(data.message);
+                    $("#process").slideUp();
+                    $("#messages").slideDown();
+                    break;
+                    default:
+                        window.location.reload()
+                        break;
+                }
+            }
+            ,error:function(e)
+            {
+                console.log(e);
+            }
+        });
+    })
+    $("#update_chart_week").on("click",function(e){
+        $("#messages").slideUp();
+        $("#process").slideDown();
+        e.preventDefault();
+        $.ajaxSetup({
+            headers:{
+                "X-CSRF-TOKEN":$("meta[name='csrf-token']").attr("content")
+            }
+        });
+        $.ajax({
+            url:"/admin/profit/update/chart/week",
+            method:"POST",
+            success:function(data)
+            {
+                console.log(data.message);
+                switch (data.status) {
+                    case 200:
+                    $("#success_message").val("");
+                    $("#success_message").text(data.message);
+                      $("#process").slideUp();
+                    $("#messages").slideDown();
+                    break;
+                    default:
+                        window.location.reload()
+                        break;
+                }
+            }
+            ,error:function(e)
+            {
+                console.log(e);
+            }
+        });
+    })
+})
